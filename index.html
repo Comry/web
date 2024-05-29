@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перейти к источнику</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
 <body>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
+    <div class="container">
+        <button onclick="location.href='https://github.com/yourusername/yourrepository'">Перейти к источнику</button>
+    </div>
 </body>
 </html>
