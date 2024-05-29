@@ -4,15 +4,32 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #d3d3d3; /* сероватый фон */
+    font-family: Arial, sans-serif;
 }
 
 .container {
     text-align: center;
 }
 
+h1 {
+    color: #333; /* темно-серый цвет */
+    margin-bottom: 20px;
+}
+
 button {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: #696969; /* серый текст */
+    background-color: #add8e6; /* светло-голубая кнопка */
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #87ceeb; /* измените цвет кнопки при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
