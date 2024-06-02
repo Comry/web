@@ -3,13 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Перейти к источнику</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Snake Game Scores</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Добро пожаловать на сайт!</h1>
-        <button onclick="location.href='https://www.youtube.com/'">Перейти к источнику</button>
-    </div>
+    <h1>Snake Game Scores</h1>
+    <table id="scoreTable"></table>
+
+    <script>
+        async function loadCSV() {
+            const response = await fetch('Score.csv');
+            const data = await response.text();
+            const rows = data.split('\n');
+
+            const table = document.getElementById('scoreTable');
+            table.innerHTML = '';  // Clear existing table content
+
+            rows.forEach((row, rowIndex) => {
+                const cols = row.split(',');
+
+                if (cols.length > 1) {
+                    const tr = document.createElement('tr');
+
+                    cols.forEach((col, colIndex) => {
+                        const cell = rowIndex === 0 ? document.createElement('th') : document.createElement('td');
+                        cell.textContent = col;
+                        tr.appendChild(cell);
+                    });
+
+                    table.appendChild(tr);
+                }
+            });
+        }
+
+        loadCSV();
+    </script>
 </body>
 </html>
